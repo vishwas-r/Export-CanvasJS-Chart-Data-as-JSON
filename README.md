@@ -1,6 +1,6 @@
 # Export CanvasJS Chart Data as JSON
 
-This plugin allows you to export and save CanvasJS Chart's data as JSON.
+This is a plugin for CanvasJS Charts that allows you to export and save CanvasJS Chart's data as JSON.
 
 ## CanvasJS
 CanvasJS is an HTML5 & JavaScript based Charting Library that runs on all modern devices including iPhone, Android, Desktops, etc. Charts are beautiful and API is very simple to use.
