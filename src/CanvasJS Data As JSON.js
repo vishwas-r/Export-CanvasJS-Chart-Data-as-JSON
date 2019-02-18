@@ -24,15 +24,15 @@ function CanvasJSDataAsJSON(chart, fileName) {
 		var exportButton = document.createElement('button');
 		var chartBound = chart.container.getBoundingClientRect();
 
-		exportButton.style.cssText = "position:absolute;display: inline-block;padding: 5px 15px;cursor: pointer;text-align: center;text-decoration: none;background-color: #f4511e;border: none;border-radius: 10px;left:" + (chartBound.right - 60) + "px; top:" + chartBound.top + "px";
+		exportButton.style.cssText = "position:absolute;display: inline-block;padding: 0px 4px;height: 27px;cursor: pointer;text-align: center;text-decoration: none;background-color: #fff;border: 1px solid rgb(33, 150, 243);left:" + (chartBound.right - (chart.options.zoomEnabled ? 115 : 60)) + "px; top:" + (chartBound.top + 2) + "px";
 		var img = document.createElement("IMG");
 		img.setAttribute("src", base64Img);
 		exportButton.appendChild(img);
 		exportButton.addEventListener("mouseover", function() {
-			this.style.cssText = this.style.cssText + "background-color: #d4511e;";
+			this.style.cssText = this.style.cssText + "background-color: rgb(33, 150, 243)";
 		});
 		exportButton.addEventListener("mouseout", function() {
-			this.style.cssText = this.style.cssText + "background-color: #f4511e;";
+			this.style.cssText = this.style.cssText + "background-color: #fff;";
 		});
 		exportButton.addEventListener("click", function() {
 			downloadJSON({
