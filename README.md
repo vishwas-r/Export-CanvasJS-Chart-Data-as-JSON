@@ -33,6 +33,16 @@ chart.render();
 CanvasJSDataAsJSON(chart, "filename");
 ```
 
+#### When exportEnabled is set to true
+![exportEnabled true](https://raw.githubusercontent.com/vishwas-r/Export-CanvasJS-Chart-Data-as-JSON/master/screenshots/export-chart-as-json-dropdown.png)
+
+#### When exportEnabled is set to false
+![exportEnabled false](https://raw.githubusercontent.com/vishwas-r/Export-CanvasJS-Chart-Data-as-JSON/master/screenshots/export-chart-as-json-export-false.png)
+
+#### When exportEnabled is set to false & zoomEnabled is set to true
+![exportEnabled false](https://raw.githubusercontent.com/vishwas-r/Export-CanvasJS-Chart-Data-as-JSON/master/screenshots/export-chart-as-json-zooming.png)
+
+
 ##### Note: 
-- Plugin was last tested with **CanvasJS v2.2GA**
+- Plugin was last tested with **CanvasJS v2.3.1GA**
 - This plugin requires you to have CanvasJS License. Please visit **[CanvasJS](https://canvasjs.com/license/)** for more info.
