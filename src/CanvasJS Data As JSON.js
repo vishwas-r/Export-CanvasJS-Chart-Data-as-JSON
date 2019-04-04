@@ -12,7 +12,7 @@ function CanvasJSDataAsJSON(chart, fileName) {
 			exportJSON.setAttribute("style", "padding: 12px 8px; background-color: white; color: black")
 		});
 		exportJSON.addEventListener("click", function() {
-			downloadJSON({
+			parseJSON({
 				filename: (fileName || "chart-data") + ".json",
 				chart: chart
 			})
@@ -35,7 +35,7 @@ function CanvasJSDataAsJSON(chart, fileName) {
 			this.style.cssText = this.style.cssText + "background-color: #fff;";
 		});
 		exportButton.addEventListener("click", function() {
-			downloadJSON({
+			parseJSON({
 				filename: (fileName || "chart-data") + ".json",
 				chart: chart
 			})
@@ -57,8 +57,8 @@ function convertChartDataToJSON(args) {
 	return result;
 }
 
-function downloadJSON(args) {
-	var data, filename, link;
+function parseJSON(args) {
+	var filename;
 	var jsonData;	
 	jsonData = convertChartDataToJSON(args.chart.options);
 	
@@ -67,8 +67,12 @@ function downloadJSON(args) {
 	if (!jsonData.match(/^application:json/i)) {
 		jsonData = 'data:text/json;charset=utf-8,' + jsonData;
 	}
-	data = encodeURI(jsonData);
-	link = document.createElement('a');
+	downloadFile(jsonData, filename);
+}
+
+function downloadFile(extData, filename){
+	var data = encodeURI(extData);
+	var link = document.createElement('a');
 	link.setAttribute('href', data);
 	link.setAttribute('download', filename);
 	document.body.appendChild(link); // Required for FF
