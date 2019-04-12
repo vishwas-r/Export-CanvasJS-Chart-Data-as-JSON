@@ -24,7 +24,7 @@ function CanvasJSDataAsJSON(chart, fileName) {
 		var exportButton = document.createElement('button');
 		var chartBound = chart.container.getBoundingClientRect();
 
-		exportButton.style.cssText = "position:absolute;display: inline-block;padding: 0px 4px;width: 35px;height: 27px;cursor: pointer;text-align: center;text-decoration: none;background-color: #fff;border: 1px solid rgb(33, 150, 243);left:" + (chartBound.right - (chart.options.zoomEnabled ? 115 : 60)) + "px; top:" + (chartBound.top + 2) + "px";
+		exportButton.style.cssText = "position:absolute;display: inline-block;padding: 0px 4px;width: 35px;height: 27px;cursor: pointer;text-align: center;text-decoration: none;background-color: #fff;border: 1px solid rgb(33, 150, 243);left:" + (chart.container.clientWidth - (chart.options.zoomEnabled ? 115 : 60)) + "px; top: 1px";
 		var img = document.createElement("IMG");
 		img.setAttribute("src", base64Img);
 		exportButton.appendChild(img);
@@ -41,7 +41,7 @@ function CanvasJSDataAsJSON(chart, fileName) {
 			})
 		});
 
-		chart.container.parentNode.insertBefore(exportButton, chart.container.nextSibling);
+		chart.container.appendChild(exportButton);
 	}
 };
 
