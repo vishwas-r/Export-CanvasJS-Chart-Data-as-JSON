@@ -10,13 +10,13 @@
         if (chart.options.exportEnabled) {
             var exportJSON = document.createElement('div');
             var text = document.createTextNode("Save as JSON");
-            exportJSON.setAttribute("style", "padding: 12px 8px; background-color: white; color: black")
+            exportJSON.setAttribute("style", "padding: 12px 8px; background-color: " + chart.toolbar.backgroundColor + "; color: " + chart.toolbar.fontColor);
             exportJSON.appendChild(text);
             exportJSON.addEventListener("mouseover", function () {
-                exportJSON.setAttribute("style", "padding: 12px 8px; background-color: #2196F3; color: white")
+                exportJSON.setAttribute("style", "padding: 12px 8px; background-color: " + chart.toolbar.backgroundColorOnHover + "; color: " + chart.toolbar.fontColorOnHover);
             });
             exportJSON.addEventListener("mouseout", function () {
-                exportJSON.setAttribute("style", "padding: 12px 8px; background-color: white; color: black")
+                exportJSON.setAttribute("style", "padding: 12px 8px; background-color: " + chart.toolbar.backgroundColor + "; color: " + chart.toolbar.fontColor);
             });
             exportJSON.addEventListener("click", function () {
                 parseJSON({
@@ -31,15 +31,15 @@
             var exportButton = document.createElement('button');
             var chartBound = chart.container.getBoundingClientRect();
 
-            exportButton.style.cssText = "position:relative;display: inline-block;padding: 0px 4px;width: 35px;height: 27px;cursor: pointer;text-align: center;text-decoration: none;background-color: #fff;border: 1px solid rgb(33, 150, 243);left:" + (chart.container.clientWidth - (chart.options.zoomEnabled ? 115 : 60)) + "px; top: 1px";
+            exportButton.style.cssText = "position:relative;display: inline-block;padding: 0px 4px;width: 35px;height: 27px;cursor: pointer;text-align: center;text-decoration: none;background-color: " + chart.toolbar.backgroundColor + ";border: 1px solid " + chart.toolbar.borderColor + ";left:" + (chart.container.clientWidth - (chart.options.zoomEnabled ? 115 : 60)) + "px; top: 1px";
             var img = document.createElement("IMG");
             img.setAttribute("src", base64Img);
             exportButton.appendChild(img);
             exportButton.addEventListener("mouseover", function () {
-                this.style.cssText = this.style.cssText + "background-color: rgb(33, 150, 243)";
+                this.style.cssText = this.style.cssText + "background-color: " + chart.toolbar.backgroundColorOnHover;
             });
             exportButton.addEventListener("mouseout", function () {
-                this.style.cssText = this.style.cssText + "background-color: #fff;";
+                this.style.cssText = this.style.cssText + "background-color: " + chart.toolbar.backgroundColor;
             });
             exportButton.addEventListener("click", function () {
                 parseJSON({
