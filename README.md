@@ -21,7 +21,9 @@ var chart = new CanvasJS.Chart("chartContainer", {
 });
 chart.render();
 
-CanvasJSDataAsJSON(chart, "filename");
+CanvasJSDataAsJSON(chart [,"filename"]);
+//or
+chart.exportAsJSON(["filename"]);
 ```
 
 #### When exportEnabled is set to true
