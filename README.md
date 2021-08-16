@@ -37,5 +37,5 @@ chart.exportAsJSON(["filename"]);
 
 
 ##### Note: 
-- Plugin was last tested with **CanvasJS Chart v3.2.3GA**
+- Plugin was last tested with **CanvasJS Chart v3.4 Beta 1**
 - This plugin requires you to have CanvasJS License. Please visit **[CanvasJS](https://canvasjs.com/license/)** for more info.
